@@ -1,0 +1,69 @@
+html, body {
+	height: 100%;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#page-wrap {
+	background-color: #D7E5CC;
+	background-image: url("images/square_bg/square_bg.png"); /* subtlepatterns.com */
+	min-height: 100%;
+	margin-bottom: -100px;
+	font-family: 'Raleway', sans-serif;
+}
+
+#page-wrap:after {
+	content: "";
+	display: block;
+}
+
+.site-footer, #page-wrap:after {
+	height: 100px;
+}
+
+.site-footer {
+	background-color: #AFBF75;
+}
+
+header, h1, h5 {
+	font-family: 'Rakkas', cursive;
+	color: #5A758C;
+}
+
+#heading {
+	color:#49373F;
+	font-size: 70px;
+	background-color: #AFBF75;
+}
+
+footer p {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.panel {
+	background-color: #5A758C;
+}
+
+.cardTitle {
+	font-weight: bold;
+    padding: 10px;
+    
+}
+
+#page-wrap ul {
+    
+    
+}
+
+#submit {
+    background-color: #AFBF75;
+}
+
+input {
+    color: #49373F;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="toDos">
+<head>
+
+	<meta charset="UTF-8">
+	<title>To Do</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script src="assets/app.js"></script>
+    <script src="assets/clickEvents.js"></script>
+
+</head>
+<body>
+
+	<header id="heading">To-Do List</header>
+
+	<main id="page-wrap">
+		
+		<div class="container">
+		  <div class="row">
+              <!-- angular controller -->
+			<section class="col m6 pull-m1" ng-controller="ListController as list">
+                <h1> My To-Dos</h1>
+                    <!-- repeats over the array -->
+				<div class="cardTitle" ng-repeat="item in list.items">
+                    <!-- repeats over the array within each object in the parent array -->
+                    <div class=" group taskList" ng-repeat="task in item.tasks">
+                            <ul>
+                                <li> {{ task }} </li>
+                            </ul>
+                    </div>
+                </div>
+                
+                
+			</section>
+
+			<div class="col m5 push-m1">
+			
+				<form id="formToAdd" name="taskForm">
+                    <!-- displays the text as the user types -->
+                    <blockquote>
+                        <p> {{task.category }} </p>
+                        <p> {{ task.body }} </p>
+                    </blockquote>
+                    
+					<h5> Add To My List </h5>
+ 
+					<p>What do I need to do:</p>
+                        <!-- models to the above blockquote -->
+                    <input ng-model="task.category" id="categoryInput" type="text" value="category" placeholder="category"/>
+					<textarea ng-model="task.body" id="taskInput" class="materialize-textarea"></textarea>
+                    
+                    <a id="adding" type="submit" name="action" class="waves-effect waves-light btn">submit</a>
+                    
+                    <!-- todo: add click funtion to store this in local storage or extend with mongodb -->
+
+					</div> 
+				</form>
+				
+			</div> <!-- closes aside -->
+
+		</div> <!-- closes row-->
+
+		</div> <!-- closes container -->
+		
+	</main>
+
+	<footer class="site-footer">
+
+		<p> An exploration of Angular.js</p>
+		
+	</footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    
+    
+    <script>
+        $("#adding").click(function() {
+    console.log("clicked");
+//    $('#textInput').val();
+//    $('#textInput').trigger('autoresize');
+//        
+//    console.log();
+});
+    
+    </script>
+   
+
+</body>
+</html>
